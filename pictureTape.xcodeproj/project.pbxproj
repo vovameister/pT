@@ -64,6 +64,7 @@
 		6F9C3BC72A65833300FD8090 /* SF-Pro-Text-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6F9C3B972A65833300FD8090 /* SF-Pro-Text-HeavyItalic.otf */; };
 		6F9C3BC82A65833300FD8090 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6F9C3B982A65833300FD8090 /* SF-Pro-Display-Regular.otf */; };
 		6FB5971F2A5C60CB00B6E367 /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5971E2A5C60CB00B6E367 /* ImageListCell.swift */; };
+		6FCFC8C12A72D703008800A8 /* Constaints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCFC8C02A72D703008800A8 /* Constaints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,7 @@
 		6F9C3B972A65833300FD8090 /* SF-Pro-Text-HeavyItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-HeavyItalic.otf"; sourceTree = "<group>"; };
 		6F9C3B982A65833300FD8090 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		6FB5971E2A5C60CB00B6E367 /* ImageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
+		6FCFC8C02A72D703008800A8 /* Constaints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constaints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 			children = (
 				6F9653822A51EFD10050FD02 /* ImageListViewController.swift */,
 				6FB5971E2A5C60CB00B6E367 /* ImageListCell.swift */,
+				6FCFC8C02A72D703008800A8 /* Constaints.swift */,
 			);
 			path = ImageList;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				6F9653832A51EFD10050FD02 /* ImageListViewController.swift in Sources */,
 				6FB5971F2A5C60CB00B6E367 /* ImageListCell.swift in Sources */,
 				6F6852AF2A63E9850060C41E /* ProfileViewController.swift in Sources */,
+				6FCFC8C12A72D703008800A8 /* Constaints.swift in Sources */,
 				6F96537F2A51EFD10050FD02 /* AppDelegate.swift in Sources */,
 				6F03201D2A67B83E00F9971A /* SingleImageViewController.swift in Sources */,
 				6F9653812A51EFD10050FD02 /* SceneDelegate.swift in Sources */,

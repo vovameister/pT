@@ -10,12 +10,12 @@ import UIKit
 
 final class SingleImageViewController: UIViewController {
     var image: UIImage! {
-            didSet {
-                guard isViewLoaded else { return } // 1
-                imageView.image = image // 2
-                rescaleAndCenterImageInScrollView(image: image)
-            }
+        didSet {
+            guard isViewLoaded else { return }
+            imageView.image = image
+            rescaleAndCenterImageInScrollView(image: image)
         }
+    }
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var imageView: UIImageView!
@@ -25,14 +25,14 @@ final class SingleImageViewController: UIViewController {
         scrollView.minimumZoomScale = 0.1
         scrollView.maximumZoomScale = 1.25
         imageView.image = image
-        rescaleAndCenterImageInScrollView(image: image) // изображение притягивается к левому верхнему углу, вероятно из-за бага, в рабочих условиях я бы переверстал этот экран кодом
+        rescaleAndCenterImageInScrollView(image: image) 
     }
     
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func shareButton(_ sender: Any) {
-      let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         present(share, animated: true)
     }
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {

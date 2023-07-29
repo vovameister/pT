@@ -125,14 +125,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-N9-olA">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRz-N9-olA">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="5Hd-cw-mZV">
-                                        <rect key="frame" x="-1" y="44" width="394" height="132"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="5Hd-cw-mZV">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                     </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="5Hd-cw-mZV" secondAttribute="bottom" id="ElK-97-y9b"/>
+                                    <constraint firstItem="5Hd-cw-mZV" firstAttribute="leading" secondItem="aRz-N9-olA" secondAttribute="leading" id="MEG-8J-2Ed"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Hd-cw-mZV" secondAttribute="trailing" id="kdR-6C-GR3"/>
+                                    <constraint firstItem="5Hd-cw-mZV" firstAttribute="top" secondItem="aRz-N9-olA" secondAttribute="top" id="wwU-ys-dA6"/>
+                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="1pg-kh-9gh"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="XZq-aE-37l"/>
                                 <connections>
