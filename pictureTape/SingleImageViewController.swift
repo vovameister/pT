@@ -25,7 +25,8 @@ final class SingleImageViewController: UIViewController {
         scrollView.minimumZoomScale = 0.1
         scrollView.maximumZoomScale = 1.25
         imageView.image = image
-        rescaleAndCenterImageInScrollView(image: image) 
+        rescaleAndCenterImageInScrollView(image: image)
+        let tokenStorage = OAuth2TokenStorage()
     }
     
     @IBAction func backButton(_ sender: Any) {
