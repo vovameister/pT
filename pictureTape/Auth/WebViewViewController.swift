@@ -26,20 +26,20 @@ final class WebViewViewController: UIViewController {
         delegate?.webViewViewControllerDidCancel(_vc: self)
     }
     
-        
+    
     weak var delegate: WebViewViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         webView.navigationDelegate = self
-
+        
         var urlComponents = URLComponents(string: UnsplashAuthorizeURLString)
         urlComponents?.queryItems = [
-        URLQueryItem(name: "client_id", value: accessKey),
-        URLQueryItem(name: "redirect_uri", value: redirectURI),
-        URLQueryItem(name: "response_type", value: "code"),
-        URLQueryItem(name: "scope", value: AccessScope)
+            URLQueryItem(name: "client_id", value: accessKey),
+            URLQueryItem(name: "redirect_uri", value: redirectURI),
+            URLQueryItem(name: "response_type", value: "code"),
+            URLQueryItem(name: "scope", value: AccessScope)
         ]
         if let url = urlComponents?.url {
             let request = URLRequest(url: url)
@@ -78,8 +78,8 @@ extension WebViewViewController: WKNavigationDelegate {
             delegate?.webViewViewControllter(_vc: self, didAuthernticateWithCode: code)
             decisionHandler(.cancel)
         } else {
-                decisionHandler(.allow)
-            }
+            decisionHandler(.allow)
+        }
     }
     private func code(from navigationAction: WKNavigationAction) -> String? {
         if let url = navigationAction.request.url,
@@ -90,7 +90,7 @@ extension WebViewViewController: WKNavigationDelegate {
             
         {    print("\(codeItem)")
             return codeItem.value
-           
+            
         } else {
             return nil } } }
 //extension WebViewViewController {

@@ -8,17 +8,19 @@
 import UIKit
 
 class AuthViewController: UIViewController {
-    let segIdentificator = "ShowWebView"
-    var oAuth2Service = OAuth2Service()
+    private let segIdentificator = "ShowWebView"
+    
+    private var oAuth2Service = OAuth2Service()
+    
     private let tokenStorage = OAuth2TokenStorage()
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segIdentificator {
             guard let webViewViewController = segue.destination as? WebViewViewController
             else { fatalError("fail \(segIdentificator)") }
-                webViewViewController.delegate = self }
-            else {
-                super.prepare(for: segue, sender: sender)
-            }
+            webViewViewController.delegate = self }
+        else {
+            super.prepare(for: segue, sender: sender)
+        }
     }
 }
 extension AuthViewController: WebViewViewControllerDelegate {
@@ -36,7 +38,7 @@ extension AuthViewController: WebViewViewControllerDelegate {
             case .failure(let error):
                 print("error \(error)")
             }})
-            }
+    }
     
     func webViewViewControllerDidCancel(_vc: WebViewViewController) {
         dismiss(animated: true)
