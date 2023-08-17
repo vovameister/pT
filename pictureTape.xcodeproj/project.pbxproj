@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6F03201D2A67B83E00F9971A /* SingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F03201C2A67B83E00F9971A /* SingleImageViewController.swift */; };
 		6F58002A2A8A07D700C76D3D /* URL_and_Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5800292A8A07D700C76D3D /* URL_and_Network.swift */; };
 		6F5C30672A87CBE5003E7FBE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5C30662A87CBE5003E7FBE /* SplashViewController.swift */; };
+		6F6066982A8DECF70029FDFD /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 6F6066972A8DECF70029FDFD /* ProgressHUD */; };
 		6F6852AF2A63E9850060C41E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6852AE2A63E9850060C41E /* ProfileViewController.swift */; };
 		6F96537F2A51EFD10050FD02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F96537E2A51EFD10050FD02 /* AppDelegate.swift */; };
 		6F9653812A51EFD10050FD02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9653802A51EFD10050FD02 /* SceneDelegate.swift */; };
@@ -149,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F6066982A8DECF70029FDFD /* ProgressHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +310,9 @@
 			dependencies = (
 			);
 			name = pictureTape;
+			packageProductDependencies = (
+				6F6066972A8DECF70029FDFD /* ProgressHUD */,
+			);
 			productName = pictureTape;
 			productReference = 6F96537B2A51EFD10050FD02 /* pictureTape.app */;
 			productType = "com.apple.product-type.application";
@@ -336,6 +341,9 @@
 				Base,
 			);
 			mainGroup = 6F9653722A51EFD10050FD02;
+			packageReferences = (
+				6F6066962A8DECF70029FDFD /* XCLocalSwiftPackageReference "../ProgressHUD-master" */,
+			);
 			productRefGroup = 6F96537C2A51EFD10050FD02 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -655,6 +663,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		6F6066962A8DECF70029FDFD /* XCLocalSwiftPackageReference "../ProgressHUD-master" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../ProgressHUD-master";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6F6066972A8DECF70029FDFD /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6F9653732A51EFD10050FD02 /* Project object */;
 }
