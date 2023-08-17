@@ -93,8 +93,4 @@ extension WebViewViewController: WKNavigationDelegate {
             
         } else {
             return nil } } }
-//extension WebViewViewController {
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        performSegue(withIdentifier: "segueAfterAuth", sender: self)
-//    }
-//}
+
