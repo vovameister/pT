@@ -9,14 +9,18 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    private let profileService = ProfileService.shared
+    
+    let nameLabel = UILabel()
+    let emailLabel = UILabel()
+    let messageLabel = UILabel()
+    let avatarImage = UIImageView()
+    let tabDoorButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let nameLabel = UILabel()
-        let emailLabel = UILabel()
-        let messageLabel = UILabel()
-        let avatarImage = UIImageView()
-        let tabDoorButton = UIButton()
+        updateProfileDetails(profile: profileService.profile!)
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -24,9 +28,7 @@ class ProfileViewController: UIViewController {
         avatarImage.translatesAutoresizingMaskIntoConstraints = false
         tabDoorButton.translatesAutoresizingMaskIntoConstraints = false
         
-        nameLabel.text = "Екатерина"
-        emailLabel.text = "someemail@mail.com"
-        messageLabel.text = "Hello"
+        
         let profileImage = UIImage(named: "profilePhoto")
         let tabDoorImage = UIImage(named: "door")
         avatarImage.image = profileImage
@@ -88,7 +90,13 @@ class ProfileViewController: UIViewController {
             tabDoorButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             tabDoorButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 89),
             
-            
-        ])}
+        ])
+       
+    }
+    func updateProfileDetails(profile: Profile) {
+        nameLabel.text = profile.name
+        emailLabel.text = profile.username
+        messageLabel.text = profile.bio
+    }
 }
 

@@ -30,3 +30,4 @@ final class SplashViewController: UIViewController {
         window.rootViewController = tabBarController
     }
 }
+
