@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct profileResult: Codable {
+struct ProfileResult: Codable {
     let id: String?
     let userName: String?
     let firstName: String?
@@ -28,7 +28,7 @@ struct Profile {
     let loginName: String
     let bio: String?
     
-    init(from profileResult: profileResult) {
+    init(from profileResult: ProfileResult) {
         self.username = profileResult.userName ?? ""
         self.name = "\(profileResult.firstName ?? "") \(profileResult.lastName ?? "")".trimmingCharacters(in: .whitespacesAndNewlines)
         self.loginName = "@" + self.username
@@ -42,35 +42,33 @@ final class ProfileService {
     private(set) var profile: Profile?
     
     var authToken = OAuth2TokenStorage().token
-    var request = URLRequest(url: profileUrl!)
+    private var request = URLRequest(url: profileUrl!)
     private var task: URLSessionTask?
     
     func fetchProfile(_ token: String, completion: @escaping (Result<Profile, Error>) -> Void) {
         assert(Thread.isMainThread)
         if task != nil { return }
+        
         request.httpMethod = "GET"
+        
         guard let authToken = authToken else {
             return
         }
         request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
+        let task = URLSession.shared.objectTask(for: request) {
+            [weak self] (response: Result<ProfileResult, Error>) in
+            guard let self = self else { return }
+            switch response {
+            case .success(let profileResult):
+                self.profile = Profile(from: profileResult)
+                completion(.success(self.profile!))
+            case .failure(let error):
                 completion(.failure(error))
-                print("\(error)")
-                return
-            }
-            
-            if let data = data {
-                do {
-                    let decoder = JSONDecoder()
-                    let profileResult = try decoder.decode(profileResult.self, from: data)
-                    self.profile = Profile(from: profileResult)
-                    completion(.success(self.profile!))
-                } catch {
-                    completion(.failure(error))
-                }
             }
         }
         task.resume()
-    }
-}
+            }
+        }
+       
+    
+

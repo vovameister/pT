@@ -12,9 +12,9 @@ class AuthViewController: UIViewController {
     private let segIdentificator = "ShowWebView"
     
     private var oAuth2Service = OAuth2Service()
-    private let profileService = ProfileService.shared
     
     private let tokenStorage = OAuth2TokenStorage()
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segIdentificator {
             guard let webViewViewController = segue.destination as? WebViewViewController
@@ -35,7 +35,6 @@ extension AuthViewController: WebViewViewControllerDelegate {
                 UIBlock.dissmiss()
                 let tokenStorage = OAuth2TokenStorage()
                 if let token = tokenStorage.token {
-                    self.fetchProfile(token: token)
                     print("Token: \(token)")
                 } else {
                     print("Token not found.")
@@ -50,13 +49,5 @@ extension AuthViewController: WebViewViewControllerDelegate {
     func webViewViewControllerDidCancel(_vc: WebViewViewController) {
         dismiss(animated: true)
     }
-    private func fetchProfile(token: String) { profileService.fetchProfile(tokenStorage.token!) { result in
-        switch result {
-        case .success(_):
-            print("success")
-        case .failure(_):
-            print("error in ProfileViewController")
-        }
-    }
-    }
+    
 }
