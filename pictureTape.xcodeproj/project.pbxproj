@@ -370,7 +370,7 @@
 				};
 			};
 			buildConfigurationList = 6F9653762A51EFD10050FD02 /* Build configuration list for PBXProject "pictureTape" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
