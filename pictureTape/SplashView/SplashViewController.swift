@@ -46,7 +46,7 @@ final class SplashViewController: UIViewController {
             .instantiateViewController(withIdentifier: "TabBarViewController")
         window.rootViewController = tabBarController
     }
-    private func fetchProfile(token: String) { profileService.fetchProfile(token) { result in
+    func fetchProfile(token: String) { profileService.fetchProfile(token) { result in
         switch result {
         case .success(_):
             if self.profileService.profile?.username != nil {

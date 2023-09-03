@@ -48,24 +48,11 @@ class ProfileViewController: UIViewController {
         emailLabel.textColor = UIColor(named: "YP Gray")
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0
-        
-        
-        if let customNameLabelFont = UIFont(name: "SFProText-Bold", size: 23) {
-            nameLabel.font = customNameLabelFont
-        } else {
-            nameLabel.font = UIFont.boldSystemFont(ofSize: 23 )}
-        
-        if let customEmailLabelFont = UIFont(name: "SFProText-Regular", size: 13) {
-            emailLabel.font = customEmailLabelFont
-        } else {
+       
+            nameLabel.font = UIFont.boldSystemFont(ofSize: 23 )
             emailLabel.font = UIFont.systemFont(ofSize: 13)
-        }
-        
-        if let customMessegeLabelFont = UIFont(name: "SFProText-Regular", size: 13) {
-            messageLabel.font = customMessegeLabelFont
-        } else {
-            emailLabel.font = UIFont.systemFont(ofSize: 13)
-        }
+            messageLabel.font = UIFont.systemFont(ofSize: 13)
+     
         
         
         view.addSubview(avatarImage)

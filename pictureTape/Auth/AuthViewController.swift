@@ -10,10 +10,11 @@ import ProgressHUD
 
 class AuthViewController: UIViewController {
     private let segIdentificator = "ShowWebView"
+    private let tokenStorage = OAuth2TokenStorage()
     
     private var oAuth2Service = OAuth2Service()
-    
-    private let tokenStorage = OAuth2TokenStorage()
+    private var splashViewController = SplashViewController()
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segIdentificator {
@@ -36,18 +37,18 @@ extension AuthViewController: WebViewViewControllerDelegate {
                 let tokenStorage = OAuth2TokenStorage()
                 if let token = tokenStorage.token {
                     print("Token: \(token)")
+                    self.splashViewController.fetchProfile(token: token)
                 } else {
                     print("Token not found.")
                 }
             case .failure(let error):
                 UIBlock.dissmiss()
                 print("error \(error)")
-            }})
-        
+            }
+        })
     }
     
     func webViewViewControllerDidCancel(_vc: WebViewViewController) {
         dismiss(animated: true)
     }
-    
 }

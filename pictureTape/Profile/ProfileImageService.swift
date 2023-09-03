@@ -36,7 +36,6 @@ final class ProfileImageService {
     func fetchProfileImageURL(username: String, _ completion: @escaping (Result<String, Error>) -> Void) {
         let profileImageURL = URL(string: "https://api.unsplash.com/users/\(username)")
         var request = URLRequest(url: profileImageURL!)
-        //        assert(Thread.isMainThread)
         if task != nil { return }
         request.httpMethod = "GET"
         

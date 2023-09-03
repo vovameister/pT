@@ -12,7 +12,6 @@ final class OAuth2Service {
     
     static let shared = OAuth2Service()
     
-    private var splashViewController = SplashViewController()
     private var task: URLSessionTask?
     private var lastCode: String?
     
@@ -25,7 +24,8 @@ final class OAuth2Service {
         set {
             OAuth2TokenStorage().token = newValue
             print("TOKEN", newValue)
-        } }
+        }
+    }
     func fetchOAuthToken(
         _ code: String,
         completion: @escaping (Result<String, Error>) -> Void
@@ -52,7 +52,6 @@ final class OAuth2Service {
                 let authToken = body.accessToken
                 self.authToken = authToken
                 completion(.success(authToken))
-                self.splashViewController.switchToTabBarController()
             case .failure(let error):
                 completion(.failure(error))
                 
