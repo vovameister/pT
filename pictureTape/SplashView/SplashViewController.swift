@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper //1!!!
 
 final class SplashViewController: UIViewController {
+    private let tokenKey = "OAuth2AccessToken" //2!!!!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,7 @@ final class SplashViewController: UIViewController {
         logoImage.center = view.center
         
         view.addSubview(logoImage)
+//        KeychainWrapper.standard.removeObject(forKey: tokenKey) //3!!!!!
     }
     private let profileService = ProfileService.shared
     private let profileImageService = ProfileImageService.shared
@@ -49,8 +52,9 @@ final class SplashViewController: UIViewController {
     func fetchProfile(token: String) { profileService.fetchProfile(token) { result in
         switch result {
         case .success(_):
-            if self.profileService.profile?.username != nil {
-                self.profileImageService.fetchProfileImageURL(username: self.profileService.profile!.username) { _ in } }
+                if self.profileService.profile?.username != nil {
+                    self.profileImageService.fetchProfileImageURL(username: self.profileService.profile!.username) { _ in }
+                }
             self.switchToTabBarController()
             print("success")
         case .failure(_):

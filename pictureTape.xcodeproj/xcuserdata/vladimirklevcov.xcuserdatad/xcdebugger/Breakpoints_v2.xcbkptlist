@@ -237,8 +237,8 @@
             filePath = "pictureTape/Auth/AuthViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "webViewViewControllter(_vc:didAuthernticateWithCode:)"
             landmarkType = "7">
             <Locations>
@@ -310,14 +310,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "ECD851C9-BC87-4C02-925E-2CE4F8CFC8DD"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pictureTape/SplashView/SplashViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "fetchProfile(token:)"
             landmarkType = "7">
             <Locations>
@@ -349,6 +349,126 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "ECD851C9-BC87-4C02-925E-2CE4F8CFC8DD - 4751702fe5a25d51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "568">
+               </Location>
+               <Location
+                  uuid = "ECD851C9-BC87-4C02-925E-2CE4F8CFC8DD - f1ce8bcbd0e52b62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "ECD851C9-BC87-4C02-925E-2CE4F8CFC8DD - 570c7741a26f0859"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "500">
+               </Location>
+               <Location
+                  uuid = "ECD851C9-BC87-4C02-925E-2CE4F8CFC8DD - a3aa3624ec9ce77c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "ECD851C9-BC87-4C02-925E-2CE4F8CFC8DD - 4751702fe5a25d72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "568">
+               </Location>
+               <Location
+                  uuid = "ECD851C9-BC87-4C02-925E-2CE4F8CFC8DD - f1ce8bcbd0e52b41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "ECD851C9-BC87-4C02-925E-2CE4F8CFC8DD - 4751702fe5a25d13"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "568">
+               </Location>
+               <Location
+                  uuid = "ECD851C9-BC87-4C02-925E-2CE4F8CFC8DD - f1ce8bcbd0e52b20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
                   offsetFromSymbolStart = "36">
                </Location>
             </Locations>
@@ -428,8 +548,8 @@
             filePath = "pictureTape/SplashView/SplashViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -444,10 +564,151 @@
             filePath = "pictureTape/SplashView/SplashViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "89634A9E-B3B0-4008-871E-BF2D1D09156B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureTape/SplashView/SplashViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "fetchProfile(token:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "89634A9E-B3B0-4008-871E-BF2D1D09156B - 4751702fe5a25db0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "89634A9E-B3B0-4008-871E-BF2D1D09156B - 570c7741a26f087a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "89634A9E-B3B0-4008-871E-BF2D1D09156B - 4751702fe5a25d51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "89634A9E-B3B0-4008-871E-BF2D1D09156B - 4751702fe5a25d72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;pictureTape.Profile, Swift.Error&gt;) -&gt; () in pictureTape.SplashViewController.fetchProfile(token: Swift.String) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5F8BF83B-085F-4410-89D4-4628D6EA08C7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureTape/SplashView/SplashViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "switchToTabBarController()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5F8BF83B-085F-4410-89D4-4628D6EA08C7 - 3dd63a39d6172a51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureTape.SplashViewController.switchToTabBarController() -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "5F8BF83B-085F-4410-89D4-4628D6EA08C7 - 3dd63a39d6172ab2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureTape.SplashViewController.switchToTabBarController() -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "5F8BF83B-085F-4410-89D4-4628D6EA08C7 - 3dd63a39d6172a93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureTape.SplashViewController.switchToTabBarController() -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/SplashView/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "300">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

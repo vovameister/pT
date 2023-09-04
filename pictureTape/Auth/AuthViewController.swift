@@ -12,8 +12,8 @@ class AuthViewController: UIViewController {
     private let segIdentificator = "ShowWebView"
     private let tokenStorage = OAuth2TokenStorage()
     
-    private var oAuth2Service = OAuth2Service()
-    private var splashViewController = SplashViewController()
+    private var oAuth2Service = OAuth2Service.shared
+    private let splashViewController = SplashViewController()
    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -25,6 +25,10 @@ class AuthViewController: UIViewController {
             super.prepare(for: segue, sender: sender)
         }
     }
+//    func moveToSplashViewController() {
+//        let splashViewController = SplashViewController()
+//        navigationController?.pushViewController(splashViewController, animated: true)
+//       }
 }
 extension AuthViewController: WebViewViewControllerDelegate {
     func webViewViewControllter(_vc: WebViewViewController, didAuthernticateWithCode code: String) {
@@ -34,9 +38,9 @@ extension AuthViewController: WebViewViewControllerDelegate {
             case .success(let result):
                 print("new token \(result)")
                 UIBlock.dissmiss()
-                let tokenStorage = OAuth2TokenStorage()
-                if let token = tokenStorage.token {
+                if let token = self.tokenStorage.token {
                     print("Token: \(token)")
+                     //????
                     self.splashViewController.fetchProfile(token: token)
                 } else {
                     print("Token not found.")
