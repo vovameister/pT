@@ -40,7 +40,7 @@ final class OAuth2Service {
         } else {
             if lastCode == code {
                 return
-           }
+            }
         }
         lastCode = code
         let request = authTokenRequest(code: code)
@@ -54,7 +54,6 @@ final class OAuth2Service {
                 completion(.success(authToken))
             case .failure(let error):
                 completion(.failure(error))
-                
             }
             self.task = nil
         }

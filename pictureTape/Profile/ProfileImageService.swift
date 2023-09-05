@@ -31,11 +31,12 @@ final class ProfileImageService {
     private var task: URLSessionTask?
     private(set) var avatarURL: String?
     
-    var authToken = OAuth2TokenStorage().token
+    
     
     func fetchProfileImageURL(username: String, _ completion: @escaping (Result<String, Error>) -> Void) {
         let profileImageURL = URL(string: "https://api.unsplash.com/users/\(username)")
         var request = URLRequest(url: profileImageURL!)
+        var authToken = OAuth2TokenStorage().token
         if task != nil { return }
         request.httpMethod = "GET"
         

@@ -41,12 +41,13 @@ final class ProfileService {
     static let shared = ProfileService()
     private(set) var profile: Profile?
     
-    var authToken = OAuth2TokenStorage().token
+    
     private var request = URLRequest(url: profileUrl!)
     private var task: URLSessionTask?
     
     func fetchProfile(_ token: String, completion: @escaping (Result<Profile, Error>) -> Void) {
-        assert(Thread.isMainThread)
+//        assert(Thread.isMainThread)
+        var authToken = OAuth2TokenStorage().token
         if task != nil { return }
         
         request.httpMethod = "GET"

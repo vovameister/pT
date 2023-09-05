@@ -14,7 +14,7 @@ class AuthViewController: UIViewController {
     
     private var oAuth2Service = OAuth2Service.shared
     private let splashViewController = SplashViewController()
-   
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segIdentificator {
@@ -25,10 +25,6 @@ class AuthViewController: UIViewController {
             super.prepare(for: segue, sender: sender)
         }
     }
-//    func moveToSplashViewController() {
-//        let splashViewController = SplashViewController()
-//        navigationController?.pushViewController(splashViewController, animated: true)
-//       }
 }
 extension AuthViewController: WebViewViewControllerDelegate {
     func webViewViewControllter(_vc: WebViewViewController, didAuthernticateWithCode code: String) {
@@ -40,7 +36,7 @@ extension AuthViewController: WebViewViewControllerDelegate {
                 UIBlock.dissmiss()
                 if let token = self.tokenStorage.token {
                     print("Token: \(token)")
-                     //????
+                    //????
                     self.splashViewController.fetchProfile(token: token)
                 } else {
                     print("Token not found.")
