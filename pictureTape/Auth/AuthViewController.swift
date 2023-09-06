@@ -9,12 +9,12 @@ import UIKit
 import ProgressHUD
 
 class AuthViewController: UIViewController {
+    
     private let segIdentificator = "ShowWebView"
     private let tokenStorage = OAuth2TokenStorage()
     
     private var oAuth2Service = OAuth2Service.shared
-    private let splashViewController = SplashViewController()
-    
+    weak var delegate: SplashViewControllerDelegate?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segIdentificator {
@@ -36,8 +36,7 @@ extension AuthViewController: WebViewViewControllerDelegate {
                 UIBlock.dissmiss()
                 if let token = self.tokenStorage.token {
                     print("Token: \(token)")
-                    //????
-                    self.splashViewController.fetchProfile(token: token)
+                    self.delegate?.fetchAfterAuth()
                 } else {
                     print("Token not found.")
                 }
@@ -47,8 +46,7 @@ extension AuthViewController: WebViewViewControllerDelegate {
             }
         })
     }
-    
     func webViewViewControllerDidCancel(_vc: WebViewViewController) {
-        dismiss(animated: true)
+        dismiss(animated: true, completion: nil)
     }
 }

@@ -49,7 +49,7 @@ class ProfileViewController: UIViewController {
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0
        
-            nameLabel.font = UIFont.boldSystemFont(ofSize: 23 )
+            nameLabel.font = UIFont.boldSystemFont(ofSize: 23)
             emailLabel.font = UIFont.systemFont(ofSize: 13)
             messageLabel.font = UIFont.systemFont(ofSize: 13)
      

@@ -7,7 +7,12 @@
 
 import UIKit
 
-final class SplashViewController: UIViewController {
+protocol SplashViewControllerDelegate: AnyObject {
+    func fetchAfterAuth()
+}
+
+final class SplashViewController: UIViewController, SplashViewControllerDelegate {
+    weak var delegate: SplashViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +78,13 @@ final class SplashViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(identifier: "AuthViewController")
         guard let authViewController = viewController as? AuthViewController else { return }
         authViewController.modalPresentationStyle = .fullScreen
+        authViewController.delegate = self
         present(authViewController, animated: true)
+    }
+    func fetchAfterAuth() {
+        guard let token = OAuth2TokenStorage().token
+        else { return }
+        fetchProfile(token: token)
     }
 }
 
