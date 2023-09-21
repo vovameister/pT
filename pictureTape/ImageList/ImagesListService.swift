@@ -26,21 +26,21 @@ struct Photo {
     } }
 struct PhotoResult: Codable {
     let id: String
+    let createdAt: Date?
     let width: Int
     let height: Int
-    let createdAt: Date?
+    let likedByUser: Bool
     let descriptionM: String?
     let urlsPhoto: URLs
-    let likedByUser: Bool
     
     enum CodingKeys: String, CodingKey {
         case id = "id"
+        case createdAt = "created_at"
         case width = "width"
         case height = "height"
-        case createdAt = "created_at"
+        case likedByUser = "liked_by_user"
         case descriptionM = "description"
         case urlsPhoto = "urls"
-        case likedByUser = "liked_by_user"
     }
 }
 struct URLs: Codable {
@@ -57,11 +57,12 @@ final class ImagesListService {
     
     private (set) var photo: [Photo] = []
     
-    private var lastLoadedPage: Int = 0
+    private var lastLoadedPage: Int = 1
     private var task: URLSessionTask?
     
     private var urlComponents = URLComponents(string: "https://api.unsplash.com/photos")
     
+    private var authToken = OAuth2TokenStorage().token
     
     
     
@@ -71,17 +72,22 @@ final class ImagesListService {
         if let finalUrl = urlComponents?.url {
             var request = URLRequest(url: finalUrl)
             request.httpMethod = "GET"
-            
+            guard let authToken = authToken else {
+                return
+            }
+            request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
             if task != nil { return }
             
             let task = URLSession.shared.objectTask(for: request) {
-                [weak self] (response: Result<PhotoResult, Error>) in
+                [weak self] (response: Result<[PhotoResult], Error>) in
                 guard let self = self else { return }
                 switch response {
-                case .success(let photoResult):
-                    DispatchQueue.main.async {
-                        self.photo.append(Photo(from: photoResult))
-                    }
+                case .success(let photoResults):
+                        DispatchQueue.main.async {
+                            for photoResult in photoResults {
+                                self.photo.append(Photo(from: photoResult))
+                            }
+                        }
                     completion(.success(self.photo))
                     NotificationCenter.default.post(name:ProfileImageService.DidChangeNotification,
                                                     object: self,

@@ -43,9 +43,9 @@ final class ImageListViewController: UIViewController {
 }
 extension ImageListViewController {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row + 1 == photosName.count //заменить на массив из загрузки 
-        {
-            imageListService.fetchPhotosNextPage(completion: <#(Result<[Photo], Error>) -> Void#>) }
+//        if indexPath.row + 1 == photosName.count //заменить на массив из загрузки 
+//        {
+//            imageListService.fetchPhotosNextPage(completion: <#(Result<[Photo], Error>) -> Void#>) }
     }
     
     func configCell(for cell: ImageListCell, with indexPath: IndexPath) {
