@@ -9,7 +9,7 @@ import Foundation
 struct Photo {
     let id: String
     let size: CGSize
-    let createdAt: Date?
+    let createdAt: String
     let welcomeDescription: String?
     let thumbImageURL: String
     let largeImageURL: String
@@ -26,7 +26,7 @@ struct Photo {
     } }
 struct PhotoResult: Codable {
     let id: String
-    let createdAt: Date?
+    let createdAt: String
     let width: Int
     let height: Int
     let likedByUser: Bool
@@ -50,7 +50,6 @@ struct URLs: Codable {
     let small: String
     let thumb: String
 }
-//var imagesListUrl = URL(string: "https://api.unsplash.com/photos")
 
 final class ImagesListService {
     static let DidChangeNotification = Notification.Name(rawValue: "ImagesListServiceDidChange")
@@ -83,16 +82,16 @@ final class ImagesListService {
                 guard let self = self else { return }
                 switch response {
                 case .success(let photoResults):
-                        DispatchQueue.main.async {
-                            for photoResult in photoResults {
-                                self.photo.append(Photo(from: photoResult))
-                            }
+                    DispatchQueue.main.async {
+                        for photoResult in photoResults {
+                            self.photo.append(Photo(from: photoResult))
                         }
-                    completion(.success(self.photo))
-                    NotificationCenter.default.post(name:ProfileImageService.DidChangeNotification,
-                                                    object: self,
-                                                    userInfo: ["URL": self.photo])
-                    lastLoadedPage += 1
+                        
+                        completion(.success(self.photo))
+                        NotificationCenter.default.post(name: ImagesListService.DidChangeNotification,
+                                                        object: self,
+                                                        userInfo: ["URL": self.photo])
+                        self.lastLoadedPage += 1 }
                 case .failure(let error):
                     completion(.failure(error))
                 }

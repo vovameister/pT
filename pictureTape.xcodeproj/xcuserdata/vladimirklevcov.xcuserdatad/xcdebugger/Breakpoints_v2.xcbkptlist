@@ -827,34 +827,19 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DF45C94F-7E39-4D27-8BB5-70620D87EBA7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "pictureTape/ImageList/ImagesListService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "fetchPhotosNextPage(completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "DF45C94F-7E39-4D27-8BB5-70620D87EBA7 - 941876a7e6913a9d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;pictureTape.PhotoResult, Swift.Error&gt;) -&gt; () in pictureTape.ImagesListService.fetchPhotosNextPage(completion: (Swift.Result&lt;Swift.Array&lt;pictureTape.Photo&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "pictureTape"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImagesListService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
-                  offsetFromSymbolStart = "1488">
-               </Location>
-               <Location
-                  uuid = "DF45C94F-7E39-4D27-8BB5-70620D87EBA7 - d78a2fda5db14350"
+                  uuid = "DF45C94F-7E39-4D27-8BB5-70620D87EBA7 - d78a2fda5db14216"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -864,8 +849,23 @@
                   urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImagesListService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "1964">
+               </Location>
+               <Location
+                  uuid = "DF45C94F-7E39-4D27-8BB5-70620D87EBA7 - d78a2fda5db1431e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;pictureTape.PhotoResult&gt;, Swift.Error&gt;) -&gt; () in pictureTape.ImagesListService.fetchPhotosNextPage(completion: (Swift.Result&lt;Swift.Array&lt;pictureTape.Photo&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImagesListService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
                   offsetFromSymbolStart = "1024">
                </Location>
             </Locations>
@@ -881,28 +881,28 @@
             filePath = "pictureTape/ImageList/ImagesListService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "fetchPhotosNextPage(completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "6E06BEF7-DB69-43AD-BD65-FCBBFA58220D - 941876a7e6913af2"
+                  uuid = "6E06BEF7-DB69-43AD-BD65-FCBBFA58220D - 9c923442ebf7ca38"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;pictureTape.PhotoResult, Swift.Error&gt;) -&gt; () in pictureTape.ImagesListService.fetchPhotosNextPage(completion: (Swift.Result&lt;Swift.Array&lt;pictureTape.Photo&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "pictureTape.ImagesListService.fetchPhotosNextPage(completion: (Swift.Result&lt;Swift.Array&lt;pictureTape.Photo&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "pictureTape"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImagesListService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "91"
-                  endingLineNumber = "91"
-                  offsetFromSymbolStart = "1460">
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "2664">
                </Location>
                <Location
-                  uuid = "6E06BEF7-DB69-43AD-BD65-FCBBFA58220D - d78a2fda5db142f5"
+                  uuid = "6E06BEF7-DB69-43AD-BD65-FCBBFA58220D - d78a2fda5db142b3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -912,9 +912,39 @@
                   urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImagesListService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "97"
-                  endingLineNumber = "97"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
                   offsetFromSymbolStart = "1928">
+               </Location>
+               <Location
+                  uuid = "6E06BEF7-DB69-43AD-BD65-FCBBFA58220D - 941876a7e6913b7e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;pictureTape.PhotoResult, Swift.Error&gt;) -&gt; () in pictureTape.ImagesListService.fetchPhotosNextPage(completion: (Swift.Result&lt;Swift.Array&lt;pictureTape.Photo&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImagesListService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "2164">
+               </Location>
+               <Location
+                  uuid = "6E06BEF7-DB69-43AD-BD65-FCBBFA58220D - d78a2fda5db142b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;pictureTape.PhotoResult&gt;, Swift.Error&gt;) -&gt; () in pictureTape.ImagesListService.fetchPhotosNextPage(completion: (Swift.Result&lt;Swift.Array&lt;pictureTape.Photo&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImagesListService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "932">
                </Location>
             </Locations>
          </BreakpointContent>
