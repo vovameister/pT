@@ -31,7 +31,6 @@
 		6FB77B5B2A8281A6000EA48A /* OAuth2TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB77B5A2A8281A6000EA48A /* OAuth2TokenStorage.swift */; };
 		6FCFC8C12A72D703008800A8 /* Constaints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCFC8C02A72D703008800A8 /* Constaints.swift */; };
 		6FFC458D2ABA000800F217B3 /* ImagesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFC458C2ABA000800F217B3 /* ImagesListService.swift */; };
-		6FFC45952ABC56B400F217B3 /* ImageListServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFC45942ABC56B400F217B3 /* ImageListServiceTests.swift */; };
 		BF34EE072AA1EF6A00754438 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = BF34EE062AA1EF6A00754438 /* ProgressHUD */; };
 		BF34EE0A2AA1EF7500754438 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BF34EE092AA1EF7500754438 /* Kingfisher */; };
 		BF34EE0D2AA1EF7E00754438 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = BF34EE0C2AA1EF7E00754438 /* SwiftKeychainWrapper */; };
@@ -73,7 +72,6 @@
 		6FCFC8C02A72D703008800A8 /* Constaints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constaints.swift; sourceTree = "<group>"; };
 		6FFC458C2ABA000800F217B3 /* ImagesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListService.swift; sourceTree = "<group>"; };
 		6FFC45922ABC56B400F217B3 /* pictureTapeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pictureTapeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FFC45942ABC56B400F217B3 /* ImageListServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				6F96537D2A51EFD10050FD02 /* pictureTape */,
-				6FFC45932ABC56B400F217B3 /* Pt FeedTests */,
 				6F96537C2A51EFD10050FD02 /* Products */,
 				6F5AD2112A9A11F6003EE135 /* Frameworks */,
 			);
@@ -201,14 +198,6 @@
 				6F9653802A51EFD10050FD02 /* SceneDelegate.swift */,
 			);
 			path = baseDelegetes;
-			sourceTree = "<group>";
-		};
-		6FFC45932ABC56B400F217B3 /* Pt FeedTests */ = {
-			isa = PBXGroup;
-			children = (
-				6FFC45942ABC56B400F217B3 /* ImageListServiceTests.swift */,
-			);
-			path = "Pt FeedTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,7 +339,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FFC45952ABC56B400F217B3 /* ImageListServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

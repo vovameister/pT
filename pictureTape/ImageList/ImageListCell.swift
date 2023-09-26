@@ -14,4 +14,9 @@ final class ImageListCell: UITableViewCell {
     @IBOutlet var likeButton: UIButton!
     @IBOutlet var imageCell: UIImageView!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+       
+    }
 }

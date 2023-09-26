@@ -817,8 +817,8 @@
             filePath = "pictureTape/ImageList/ImageListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -945,6 +945,197 @@
                   startingLineNumber = "95"
                   endingLineNumber = "95"
                   offsetFromSymbolStart = "932">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "283CD371-D5E1-4252-89A3-C4A306FC6472"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureTape/ImageList/ImageListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "configCell(for:with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "283CD371-D5E1-4252-89A3-C4A306FC6472 - 9e96f79ab8391743"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureTape.ImageListViewController.configCell(for: pictureTape.ImageListCell, with: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImageListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "283CD371-D5E1-4252-89A3-C4A306FC6472 - 9e96f79ab8391743"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureTape.ImageListViewController.configCell(for: pictureTape.ImageListCell, with: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImageListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "1308">
+               </Location>
+               <Location
+                  uuid = "283CD371-D5E1-4252-89A3-C4A306FC6472 - 9e96f79ab8391743"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureTape.ImageListViewController.configCell(for: pictureTape.ImageListCell, with: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImageListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "1424">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2A5E4E8-9214-478F-B9B3-CCA322AD7B12"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureTape/ImageList/ImageListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F678AED-93B6-4872-B867-7CEA791A471E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureTape/ImageList/ImageListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "tableView(_:willDisplay:forRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7F678AED-93B6-4872-B867-7CEA791A471E - 3cd04698b0127720"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureTape.ImageListViewController.tableView(_: __C.UITableView, willDisplay: __C.UITableViewCell, forRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImageListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "520">
+               </Location>
+               <Location
+                  uuid = "7F678AED-93B6-4872-B867-7CEA791A471E - 15ea67ca0e815785"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;pictureTape.Photo&gt;, Swift.Error&gt;) -&gt; () in pictureTape.ImageListViewController.tableView(_: __C.UITableView, willDisplay: __C.UITableViewCell, forRowAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImageListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D39E10E3-AFDD-4C31-B581-9B3815611502"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureTape/ImageList/ImageListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "353C2CC8-98A3-49BF-BBDD-C74DFF6EEDE1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pictureTape/ImageList/ImageListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "353C2CC8-98A3-49BF-BBDD-C74DFF6EEDE1 - 985f51fe43c83b97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "pictureTape.ImageListViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImageListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "848">
+               </Location>
+               <Location
+                  uuid = "353C2CC8-98A3-49BF-BBDD-C74DFF6EEDE1 - b1c40d31a96d9f6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Foundation.Notification) -&gt; () in pictureTape.ImageListViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "pictureTape"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirklevcov/Desktop/pT/pictureTape/ImageList/ImageListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "48">
                </Location>
             </Locations>
          </BreakpointContent>
