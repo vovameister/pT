@@ -7,37 +7,60 @@
 
 
 import UIKit
+import Kingfisher
+import ProgressHUD
+
 
 final class SingleImageViewController: UIViewController {
-    var image: UIImage! {
-        didSet {
-            guard isViewLoaded else { return }
-            imageView.image = image
-            rescaleAndCenterImageInScrollView(image: image)
-        }
-    }
-    
+    var imageUrlFull: String = ""
+//    var image: UIImage! {
+//        didSet {
+//            guard isViewLoaded else { return }
+//            imageView.image = self.imageView.image
+//            rescaleAndCenterImageInScrollView(image: self.imageView.image!)
+//        }
+//    }
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet var imageView: UIImageView!
-    
+    func imageLoad() {
+        guard let largeURL = URL(string: imageUrlFull) else { return }
+        UIBlock.show()
+        DispatchQueue.main.async {
+            self.imageView.kf.setImage(with: largeURL, placeholder: nil, options: [], completionHandler: { result in
+                switch result {
+                case .success(_):
+                    self.rescaleAndCenterImageInScrollView(image: self.imageView.image!)
+                    UIBlock.dissmiss()
+                    break
+                case .failure(let error):
+                    print("Image loading error: \(error)")
+                    UIBlock.dissmiss()
+                }
+            })
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageLoad()
         scrollView.minimumZoomScale = 0.1
         scrollView.maximumZoomScale = 1.25
-        imageView.image = image
-        rescaleAndCenterImageInScrollView(image: image)
-        let tokenStorage = OAuth2TokenStorage()
+        rescaleAndCenterImageInScrollView(image: self.imageView.image!)
     }
     
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func shareButton(_ sender: Any) {
-        let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        let share = UIActivityViewController(activityItems: [self.imageView.image], applicationActivities: nil)
         present(share, animated: true)
     }
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        rescaleAndCenterImageInScrollView(image: image)
+ 
+        let xOffset = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+            let yOffset = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+            
+            // Apply the calculated offsets to center the image
+            scrollView.contentInset = UIEdgeInsets(top: yOffset, left: xOffset, bottom: 0, right: 0)
     }
     
     
@@ -65,3 +88,4 @@ extension SingleImageViewController: UIScrollViewDelegate {
         imageView
     }
 }
+

@@ -6,50 +6,6 @@
 //
 
 import Foundation
-struct Photo {
-    let id: String
-    let size: CGSize
-    let createdAt: String
-    let welcomeDescription: String?
-    let thumbImageURL: String
-    let largeImageURL: String
-    let isLiked: Bool
-    
-    init(from photoResult: PhotoResult) {
-        id = photoResult.id
-        size = CGSize(width: photoResult.width, height: photoResult.height)
-        createdAt = photoResult.createdAt
-        welcomeDescription = photoResult.descriptionM
-        thumbImageURL = photoResult.urlsPhoto.thumb
-        largeImageURL = photoResult.urlsPhoto.full
-        isLiked = photoResult.likedByUser
-    } }
-struct PhotoResult: Codable {
-    let id: String
-    let createdAt: String
-    let width: Int
-    let height: Int
-    let likedByUser: Bool
-    let descriptionM: String?
-    let urlsPhoto: URLs
-    
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case createdAt = "created_at"
-        case width = "width"
-        case height = "height"
-        case likedByUser = "liked_by_user"
-        case descriptionM = "description"
-        case urlsPhoto = "urls"
-    }
-}
-struct URLs: Codable {
-    let raw: String
-    let full: String
-    let regular: String
-    let small: String
-    let thumb: String
-}
 
 final class ImagesListService {
     static let DidChangeNotification = Notification.Name(rawValue: "ImagesListServiceDidChange")
@@ -66,9 +22,10 @@ final class ImagesListService {
     
     
     func fetchPhotosNextPage(completion: @escaping (Result<[Photo], Error>) -> Void) {
-        var pageQueryItem = URLQueryItem(name: "page", value: "\(lastLoadedPage)")
+        let pageQueryItem = URLQueryItem(name: "page", value: "\(lastLoadedPage)")
         urlComponents?.queryItems = [pageQueryItem]
         if let finalUrl = urlComponents?.url {
+            print("\(finalUrl)")
             var request = URLRequest(url: finalUrl)
             request.httpMethod = "GET"
             guard let authToken = authToken else {
@@ -82,21 +39,56 @@ final class ImagesListService {
                 guard let self = self else { return }
                 switch response {
                 case .success(let photoResults):
+                    self.lastLoadedPage += 1
                     DispatchQueue.main.async {
                         for photoResult in photoResults {
                             self.photo.append(Photo(from: photoResult))
                         }
-                        
                         completion(.success(self.photo))
                         NotificationCenter.default.post(name: ImagesListService.DidChangeNotification,
                                                         object: self,
                                                         userInfo: ["URL": self.photo])
-                        self.lastLoadedPage += 1 }
+                    }
                 case .failure(let error):
                     completion(.failure(error))
                 }
             }
             task.resume()
         }
+    }
+    func changeLike(photoId: String, isLike: Bool, _ completion: @escaping (Result<Void, Error>) -> Void) {
+        let url = URL(string:"https://api.unsplash.com/photos/\(photoId)/like")
+        var request = URLRequest(url: url!)
+        if isLike == false {
+            request.httpMethod = "POST"
+        }
+        else {
+            request.httpMethod = "DELETE"
+        }
+        guard let authToken = authToken else {
+            return
+        }
+        request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
+        print(request)
+        print(request.httpMethod)
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            print("\(String(describing: response))")
+            if let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) {
+                completion(.success(()))
+                    if let index = self.photo.firstIndex(where: { $0.id == photoId }) {
+                        var photo = self.photo[index]
+                        photo.isLike()
+                        print(photo.isLiked)
+                        self.photo[index] = photo
+                }
+            }
+            else if let error = error {
+                print("\(error)")
+                completion(.failure(error))
+                return
+            }
+        }
+        task.resume()
     }
 }
