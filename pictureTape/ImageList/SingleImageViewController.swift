@@ -13,15 +13,10 @@ import ProgressHUD
 
 final class SingleImageViewController: UIViewController {
     var imageUrlFull: String = ""
-//    var image: UIImage! {
-//        didSet {
-//            guard isViewLoaded else { return }
-//            imageView.image = self.imageView.image
-//            rescaleAndCenterImageInScrollView(image: self.imageView.image!)
-//        }
-//    }
+    
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet var imageView: UIImageView!
+    
     func imageLoad() {
         guard let largeURL = URL(string: imageUrlFull) else { return }
         UIBlock.show()

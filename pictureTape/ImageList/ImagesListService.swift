@@ -76,11 +76,11 @@ final class ImagesListService {
             print("\(String(describing: response))")
             if let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) {
                 completion(.success(()))
-                    if let index = self.photo.firstIndex(where: { $0.id == photoId }) {
-                        var photo = self.photo[index]
-                        photo.isLike()
-                        print(photo.isLiked)
-                        self.photo[index] = photo
+                if let index = self.photo.firstIndex(where: { $0.id == photoId }) {
+                    var photo = self.photo[index]
+                    photo.isLike()
+                    print(photo.isLiked)
+                    self.photo[index] = photo
                 }
             }
             else if let error = error {

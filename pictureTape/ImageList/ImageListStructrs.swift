@@ -19,7 +19,7 @@ struct Photo {
     init(from photoResult: PhotoResult) {
         id = photoResult.id
         size = CGSize(width: photoResult.width, height: photoResult.height)
-        createdAt = photoResult.createdAt
+        createdAt = photoResult.createdAt ?? ""
         welcomeDescription = photoResult.descriptionM
         thumbImageURL = photoResult.urlsPhoto.thumb
         largeImageURL = photoResult.urlsPhoto.full
@@ -38,13 +38,11 @@ struct Photo {
            isLiked = !isLiked
        }
     func convertCreatedAtToDate() -> Date? {
-            guard let createdAt = createdAt else {
-                return nil
-            }
-            
-            let dateFormatter = ISO8601DateFormatter()
-            return dateFormatter.date(from: createdAt)
+        guard let createdAt = createdAt else {
+            return nil
         }
+        return DateFormatter.dateFormatter.date(from: createdAt)
+    }
 }
 
 struct PhotoResult: Codable {
@@ -72,4 +70,10 @@ struct URLs: Codable {
     let regular: String
     let small: String
     let thumb: String
+}
+extension DateFormatter {
+    static let dateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        return formatter
+    }()
 }

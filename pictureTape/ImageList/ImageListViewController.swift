@@ -43,7 +43,6 @@ final class ImageListViewController: UIViewController {
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMMM yyyy"
-        formatter.locale = Locale(identifier: "ru_RU")
         return formatter
     }()
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -103,7 +102,7 @@ extension ImageListViewController {
         
         
         var likeButton = UIImage(named: "like_button")
-        if photos[indexPath.row].isLiked == true {
+        if imageListService.photo[indexPath.row].isLiked == true {
             likeButton = UIImage(named: "like_button")
         }
         else {
@@ -152,7 +151,7 @@ extension ImageListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let photo = photos[indexPath.row]
+        let photo = imageListService.photo[indexPath.row]
         let thumbURLString = photo.thumbImageURL
         
         guard let image = KingfisherManager.shared.cache.retrieveImageInMemoryCache(forKey: thumbURLString) else {

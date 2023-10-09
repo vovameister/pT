@@ -81,7 +81,8 @@ extension WebViewViewController: WKNavigationDelegate {
             return codeItem.value
             
         } else {
-            return nil }
+            return nil
+        }
     }
 }
 

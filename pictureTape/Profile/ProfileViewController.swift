@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
     let avatarImage = UIImageView()
     let tabDoorButton = UIButton()
     
+
     @objc func buttonTapped() {
         showAlertWithYesNoAction()
         print("Button tapped!")
@@ -53,7 +54,7 @@ class ProfileViewController: UIViewController {
         avatarImage.layer.cornerRadius = 35
         avatarImage.clipsToBounds = true
         tabDoorButton.setImage(tabDoorImage, for: .normal)
-        
+        tabDoorButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         
         nameLabel.textColor = .white
         emailLabel.textColor = UIColor(named: "YP Gray")
