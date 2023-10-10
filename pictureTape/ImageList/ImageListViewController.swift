@@ -154,16 +154,19 @@ extension ImageListViewController: UITableViewDelegate {
         let photo = imageListService.photo[indexPath.row]
         let thumbURLString = photo.thumbImageURL
         
-        guard let image = KingfisherManager.shared.cache.retrieveImageInMemoryCache(forKey: thumbURLString) else {
+        let imageView = UIImageView()
+        imageView.kf.setImage(with: URL(string: thumbURLString))
+        
+        if let image = imageView.image {
+            let imageInsets = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
+            let imageViewWidth = tableView.bounds.width - imageInsets.left - imageInsets.right
+            let imageWidth = image.size.width
+            let scale = imageViewWidth / imageWidth
+            let cellHeight = image.size.height * scale + imageInsets.top + imageInsets.bottom
+            return cellHeight
+        } else {
             return 0
         }
-        
-        let imageInsets = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
-        let imageViewWidth = tableView.bounds.width - imageInsets.left - imageInsets.right
-        let imageWidth = image.size.width
-        let scale = imageViewWidth / imageWidth
-        let cellHeight = image.size.height * scale + imageInsets.top + imageInsets.bottom
-        return cellHeight
     }
 }
 extension ImageListViewController: ImagesListCellDelegate {
