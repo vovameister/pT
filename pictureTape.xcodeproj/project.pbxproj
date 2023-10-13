@@ -31,6 +31,7 @@
 		6FB77B5B2A8281A6000EA48A /* OAuth2TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB77B5A2A8281A6000EA48A /* OAuth2TokenStorage.swift */; };
 		6FC49B0E2AC9AE9F000B08BC /* ImageListStructrs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC49B0D2AC9AE9F000B08BC /* ImageListStructrs.swift */; };
 		6FCFC8C12A72D703008800A8 /* Constaints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FCFC8C02A72D703008800A8 /* Constaints.swift */; };
+		6FF3E29D2AD99A83008A7835 /* WebViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF3E29C2AD99A83008A7835 /* WebViewPresenter.swift */; };
 		6FFC458D2ABA000800F217B3 /* ImagesListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFC458C2ABA000800F217B3 /* ImagesListService.swift */; };
 		BF34EE072AA1EF6A00754438 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = BF34EE062AA1EF6A00754438 /* ProgressHUD */; };
 		BF34EE0A2AA1EF7500754438 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BF34EE092AA1EF7500754438 /* Kingfisher */; };
@@ -72,6 +73,7 @@
 		6FB77B5A2A8281A6000EA48A /* OAuth2TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth2TokenStorage.swift; sourceTree = "<group>"; };
 		6FC49B0D2AC9AE9F000B08BC /* ImageListStructrs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListStructrs.swift; sourceTree = "<group>"; };
 		6FCFC8C02A72D703008800A8 /* Constaints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constaints.swift; sourceTree = "<group>"; };
+		6FF3E29C2AD99A83008A7835 /* WebViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewPresenter.swift; sourceTree = "<group>"; };
 		6FFC458C2ABA000800F217B3 /* ImagesListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListService.swift; sourceTree = "<group>"; };
 		6FFC45922ABC56B400F217B3 /* pictureTapeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pictureTapeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -187,6 +189,7 @@
 			children = (
 				6FB77B502A7E386C000EA48A /* AuthViewController.swift */,
 				6FB77B532A7E39BC000EA48A /* WebViewViewController.swift */,
+				6FF3E29C2AD99A83008A7835 /* WebViewPresenter.swift */,
 				6FB77B582A81F803000EA48A /* OAuth2Service.swift */,
 				6FB77B5A2A8281A6000EA48A /* OAuth2TokenStorage.swift */,
 				6FB77B562A814636000EA48A /* OAuthTokenResponseBody.swift */,
@@ -332,6 +335,7 @@
 				6FB77B512A7E386C000EA48A /* AuthViewController.swift in Sources */,
 				6F96537F2A51EFD10050FD02 /* AppDelegate.swift in Sources */,
 				6FFC458D2ABA000800F217B3 /* ImagesListService.swift in Sources */,
+				6FF3E29D2AD99A83008A7835 /* WebViewPresenter.swift in Sources */,
 				6F03201D2A67B83E00F9971A /* SingleImageViewController.swift in Sources */,
 				6FB77B542A7E39BC000EA48A /* WebViewViewController.swift in Sources */,
 				6F9653812A51EFD10050FD02 /* SceneDelegate.swift in Sources */,
