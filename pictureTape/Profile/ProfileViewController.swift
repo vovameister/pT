@@ -8,17 +8,15 @@
 import UIKit
 import Kingfisher
 import WebKit
-protocol ProfileViewControllerProtocol {
-    func updateAvatar()
-}
 
-class ProfileViewController: UIViewController & ProfileViewControllerProtocol {
+class ProfileViewController: UIViewController {
     
     private let profileService = ProfileService.shared
     private let sceneDelegate = SceneDelegate()
     private let splashViewController = SplashViewController()
     
     var profilePresenter: ProfilePresenterProtocol?
+    var profileViewHelper: ProfileViewHealperProtocol?
     private var profileImageServiceObserver: NSObjectProtocol?
     
     let nameLabel = UILabel()
@@ -36,11 +34,13 @@ class ProfileViewController: UIViewController & ProfileViewControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         profilePresenter = ProfilePresenter(viewController: self)
+        profileViewHelper = ProfileViewHelper(viewController: self)
         
         view.backgroundColor = UIColor(named: "YP Black")
         
         if let profileService = profileService.profile {
-            updateProfileDetails(profile: profileService) }
+            profileViewHelper?.updateProfile(profile: profileService)
+        }
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         emailLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -102,21 +102,9 @@ class ProfileViewController: UIViewController & ProfileViewControllerProtocol {
         profileImageServiceObserver = NotificationCenter.default.addObserver(forName: ProfileImageService.DidChangeNotification, object: nil, queue: .main) {
             [weak self] _ in
             guard let self = self else { return }
-            self.updateAvatar()
+            profileViewHelper?.updateAvatar()
         }
-        updateAvatar()
-    }
-    func updateProfileDetails(profile: Profile) {
-        nameLabel.text = profile.name
-        emailLabel.text = profile.username
-        messageLabel.text = profile.bio
-    }
-    func updateAvatar() {
-        guard
-            let profileImageURL = ProfileImageService.shared.avatarURL,
-            let url = URL(string: profileImageURL)
-        else { return }
-        avatarImage.kf.setImage(with: url)
+        profileViewHelper?.updateAvatar()
     }
 }
 

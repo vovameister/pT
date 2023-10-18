@@ -14,9 +14,16 @@ final class ProfilePresenterSpy: ProfilePresenterProtocol {
         presenterCalled = true
     }
 }
-final class ProfileViewControllerSpy: ProfileViewControllerProtocol {
-    var updateAvataCalled = false
+final class ProfileViewHelperSpy: ProfileViewHealperProtocol {
+    var avataUpdated = false
+    var profileUpdated = false
+    
     func updateAvatar() {
-        updateAvataCalled = true
+       avataUpdated = true
+    }
+    
+    func updateProfile(profile: pictureTape.Profile) {
+        profileUpdated = true
     }
 }
+
