@@ -8,18 +8,18 @@
 import UIKit
 import Kingfisher
 import WebKit
+protocol ProfileViewControllerProtocol {
+    func updateAvatar()
+}
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController & ProfileViewControllerProtocol {
     
     private let profileService = ProfileService.shared
-    private let tokenStorage = OAuth2TokenStorage()
     private let sceneDelegate = SceneDelegate()
     private let splashViewController = SplashViewController()
     
+    var profilePresenter: ProfilePresenterProtocol?
     private var profileImageServiceObserver: NSObjectProtocol?
-    var window = UIApplication.shared.windows.first
-    
-
     
     let nameLabel = UILabel()
     let emailLabel = UILabel()
@@ -29,12 +29,13 @@ class ProfileViewController: UIViewController {
     
 
     @objc func buttonTapped() {
-        showAlertWithYesNoAction()
+        profilePresenter?.showAlertWithYesNoAction()
         print("Button tapped!")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        profilePresenter = ProfilePresenter(viewController: self)
         
         view.backgroundColor = UIColor(named: "YP Black")
         
@@ -110,48 +111,12 @@ class ProfileViewController: UIViewController {
         emailLabel.text = profile.username
         messageLabel.text = profile.bio
     }
-    private func updateAvatar() {
+    func updateAvatar() {
         guard
             let profileImageURL = ProfileImageService.shared.avatarURL,
             let url = URL(string: profileImageURL)
         else { return }
         avatarImage.kf.setImage(with: url)
-        
-    }
-    func showAlertWithYesNoAction() {
-        let alertController = UIAlertController(title: "Пока, пока!", message: "Вы уверены, что хотите выйти?", preferredStyle: .alert)
-
-        
-        let yesAction = UIAlertAction(title: "Да", style: .default) { (_) in
-            self.clean()
-            self.tokenStorage.removeTokenFromKeychain()
-            alertController.dismiss(animated: true, completion: nil)
-            self.window?.rootViewController = self.splashViewController
-            self.window?.makeKeyAndVisible()
-            print("User tapped 'Yes'")
-        }
-        let noAction = UIAlertAction(title: "Нет", style: .cancel) { (_) in
-            alertController.dismiss(animated: true, completion: nil)
-            print("User tapped 'No'")
-        }
-
-        alertController.addAction(yesAction)
-            alertController.addAction(noAction)
-           
-    
-        
-        self.present(alertController, animated: true, completion: nil)
     }
 }
-extension ProfileViewController {
-    func clean() {
-       HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
 
-       WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
-
-          records.forEach { record in
-             WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
-          }
-       }
-    }
-}

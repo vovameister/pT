@@ -36,14 +36,6 @@ final class WebViewViewController: UIViewController & WebViewViewControllerProto
     
     weak var delegate: WebViewViewControllerDelegate?
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == #keyPath(WKWebView.estimatedProgress) {
-            presenter?.didUpdateProgress(webView.estimatedProgress)
-        } else {
-            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +46,7 @@ final class WebViewViewController: UIViewController & WebViewViewControllerProto
              options: [],
              changeHandler: { [weak self] _, _ in
                  guard let self = self else { return }
+                 presenter?.didUpdateProgress(webView.estimatedProgress)
              })
         
     }
@@ -78,18 +71,10 @@ extension WebViewViewController: WKNavigationDelegate {
         }
     }
     private func code(from navigationAction: WKNavigationAction) -> String? {
-        if let url = navigationAction.request.url,
-           let urlComponents = URLComponents(string: url.absoluteString),
-           urlComponents.path == "/oauth/authorize/native",
-           let items = urlComponents.queryItems,
-           let codeItem = items.first(where: { $0.name == "code" })
-            
-        {    print("\(codeItem)")
-            return codeItem.value
-            
-        } else {
-            return nil
+        if let url = navigationAction.request.url {
+            return presenter?.code(from: url)
         }
+        return nil
     }
 }
 

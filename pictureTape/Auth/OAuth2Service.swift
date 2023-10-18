@@ -64,9 +64,9 @@ final class OAuth2Service {
 private func authTokenRequest(code: String) -> URLRequest {
     URLRequest.makeHTTPRequest(
         path: "/oauth/token"
-        + "?client_id=\(accessKey)"
-        + "&&client_secret=\(secretKey)"
-        + "&&redirect_uri=\(redirectURI)"
+        + "?client_id=\(AccessKey)"
+        + "&&client_secret=\(SecretKey)"
+        + "&&redirect_uri=\(RedirectURI)"
         + "&&code=\(code)"
         + "&&grant_type=authorization_code",
         httpMethod: "POST",
