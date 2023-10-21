@@ -17,6 +17,7 @@ final class ImageListViewController: UIViewController {
     private var ImageListServiceObserver: NSObjectProtocol?
     
     private var imageListService = ImagesListService()
+    /*private */var helper: ImageListHelperProtocol?
     private let showSingleImageSegueIdentifier = "ShowSingleImage"
     private var photos: [Photo] = []
     
@@ -24,6 +25,7 @@ final class ImageListViewController: UIViewController {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
         imageListService = ImagesListService()
+        helper = ImageListHelper()
         imageListService.fetchPhotosNextPage(completion: { result in
             switch result {
             case .success(let result):
@@ -39,7 +41,6 @@ final class ImageListViewController: UIViewController {
         }
         updateTableViewAnimated()
     }
-    
     private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMMM yyyy"
@@ -68,16 +69,6 @@ final class ImageListViewController: UIViewController {
             } completion: { _ in }
         }
     }
-    func setIsLiked(isLike: Bool, cell: ImageListCell) {
-        var likeButton = UIImage(named: "like_button")
-        if isLike != true {
-            likeButton = UIImage(named: "like_button")
-        }
-        else {
-            likeButton = UIImage(named: "like_button_nil")
-        }
-        cell.likeButton.setImage(likeButton, for: .normal)
-    }
 }
 extension ImageListViewController {
     func configCell(for cell: ImageListCell, with indexPath: IndexPath) {
@@ -100,15 +91,8 @@ extension ImageListViewController {
             cell.dateLabel.text = dateFormatter.string(from: date)
         }
         
-        
-        var likeButton = UIImage(named: "like_button")
-        if imageListService.photo[indexPath.row].isLiked == true {
-            likeButton = UIImage(named: "like_button")
-        }
-        else {
-            likeButton = UIImage(named: "like_button_nil")
-        }
-        cell.likeButton.setImage(likeButton, for: .normal)
+        let isLiked = !(imageListService.photo[indexPath.row].isLiked)
+        helper?.setIsLiked(isLike: isLiked, cell: cell)
     }}
 
 extension ImageListViewController: UITableViewDataSource {
@@ -171,7 +155,7 @@ extension ImageListViewController: ImagesListCellDelegate {
             switch result {
             case .success:
                 DispatchQueue.main.async {
-                    self.setIsLiked(isLike: photo.isLiked, cell: cell)
+                    self.helper?.setIsLiked(isLike: photo.isLiked, cell: cell)
                     UIBlock.dissmiss()
                 }
             case .failure(let error):

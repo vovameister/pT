@@ -28,7 +28,7 @@ final class ProfileImageService {
     static let shared = ProfileImageService()
     
     private var task: URLSessionTask?
-    private(set) var avatarURL: String?
+    var avatarURL: String?
     
     
     func fetchProfileImageURL(username: String, _ completion: @escaping (Result<String, Error>) -> Void) {

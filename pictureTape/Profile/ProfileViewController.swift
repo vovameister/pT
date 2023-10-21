@@ -8,7 +8,6 @@
 import UIKit
 import Kingfisher
 import WebKit
-
 class ProfileViewController: UIViewController {
     
     private let profileService = ProfileService.shared
@@ -20,7 +19,7 @@ class ProfileViewController: UIViewController {
     private var profileImageServiceObserver: NSObjectProtocol?
     
     let nameLabel = UILabel()
-    let emailLabel = UILabel()
+    let nNLabel = UILabel()
     let messageLabel = UILabel()
     let avatarImage = UIImageView()
     let tabDoorButton = UIButton()
@@ -43,7 +42,7 @@ class ProfileViewController: UIViewController {
         }
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        emailLabel.translatesAutoresizingMaskIntoConstraints = false
+        nNLabel.translatesAutoresizingMaskIntoConstraints = false
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         avatarImage.translatesAutoresizingMaskIntoConstraints = false
         tabDoorButton.translatesAutoresizingMaskIntoConstraints = false
@@ -56,21 +55,22 @@ class ProfileViewController: UIViewController {
         avatarImage.clipsToBounds = true
         tabDoorButton.setImage(tabDoorImage, for: .normal)
         tabDoorButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        tabDoorButton.accessibilityIdentifier = "logout button"
         
         nameLabel.textColor = .white
-        emailLabel.textColor = UIColor(named: "YP Gray")
+        nNLabel.textColor = UIColor(named: "YP Gray")
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0
        
             nameLabel.font = UIFont.boldSystemFont(ofSize: 23)
-            emailLabel.font = UIFont.systemFont(ofSize: 13)
+        nNLabel.font = UIFont.systemFont(ofSize: 13)
             messageLabel.font = UIFont.systemFont(ofSize: 13)
      
         
         
         view.addSubview(avatarImage)
         view.addSubview(nameLabel)
-        view.addSubview(emailLabel)
+        view.addSubview(nNLabel)
         view.addSubview(messageLabel)
         view.addSubview(tabDoorButton)
         
@@ -84,12 +84,12 @@ class ProfileViewController: UIViewController {
             nameLabel.topAnchor.constraint(equalTo: avatarImage.bottomAnchor, constant: 8),
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 90),
             
-            emailLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
-            emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
-            emailLabel.leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: 90),
+            nNLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            nNLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+            nNLabel.leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: 90),
             
-            messageLabel.leadingAnchor.constraint(equalTo: emailLabel.leadingAnchor),
-            messageLabel.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 8),
+            messageLabel.leadingAnchor.constraint(equalTo: nNLabel.leadingAnchor),
+            messageLabel.topAnchor.constraint(equalTo: nNLabel.bottomAnchor, constant: 8),
             messageLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 90),
             
             tabDoorButton.heightAnchor.constraint(equalToConstant: 44),

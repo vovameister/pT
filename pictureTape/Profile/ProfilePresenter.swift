@@ -8,7 +8,7 @@
 import Foundation
 import WebKit
 
-protocol ProfilePresenterProtocol: AnyObject {
+public protocol ProfilePresenterProtocol: AnyObject {
     func showAlertWithYesNoAction()
 }
 final class ProfilePresenter: ProfilePresenterProtocol {
@@ -18,13 +18,13 @@ final class ProfilePresenter: ProfilePresenterProtocol {
     
     var window = UIApplication.shared.windows.first
     
-        init(viewController: ProfileViewController) {
-            self.viewController = viewController
-        }
+    init(viewController: ProfileViewController) {
+        self.viewController = viewController
+    }
     
     func showAlertWithYesNoAction() {
         let alertController = UIAlertController(title: "Пока, пока!", message: "Вы уверены, что хотите выйти?", preferredStyle: .alert)
-
+        
         
         let yesAction = UIAlertAction(title: "Да", style: .default) { (_) in
             self.clean()
@@ -38,20 +38,20 @@ final class ProfilePresenter: ProfilePresenterProtocol {
             alertController.dismiss(animated: true, completion: nil)
             print("User tapped 'No'")
         }
-
+        
         alertController.addAction(yesAction)
-            alertController.addAction(noAction)
+        alertController.addAction(noAction)
         
         self.viewController?.present(alertController, animated: true, completion: nil)
     }
     func clean() {
-       HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
-
-       WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
-
-          records.forEach { record in
-             WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
-          }
-       }
+        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
+        
+        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            
+            records.forEach { record in
+                WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
+            }
+        }
     }
 }

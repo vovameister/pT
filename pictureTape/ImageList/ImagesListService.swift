@@ -10,7 +10,7 @@ import Foundation
 final class ImagesListService {
     static let DidChangeNotification = Notification.Name(rawValue: "ImagesListServiceDidChange")
     
-    private (set) var photo: [Photo] = []
+    var photo: [Photo] = []
     
     private var lastLoadedPage: Int = 1
     private var task: URLSessionTask?

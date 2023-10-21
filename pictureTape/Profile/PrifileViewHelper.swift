@@ -19,7 +19,7 @@ class ProfileViewHelper: ProfileViewHealperProtocol {
 
     func updateProfile(profile: Profile) {
         profileViewController?.nameLabel.text = profile.name
-        profileViewController?.emailLabel.text = profile.username
+        profileViewController?.nNLabel.text = profile.username
         profileViewController?.messageLabel.text = profile.bio
     }
 
