@@ -13,13 +13,12 @@ protocol ImageListHelperProtocol {
 final class ImageListHelper: ImageListHelperProtocol {
     func setIsLiked(isLike: Bool, cell: ImageListCell) {
         var likeButton = UIImage(named: "like_button")
-        if isLike != true {
+        if isLike == false {
             likeButton = UIImage(named: "like_button")
             cell.likeButton.accessibilityIdentifier = "like_button"
         }
         else {
             likeButton = UIImage(named: "like_button_nil")
-            cell.likeButton.accessibilityIdentifier = "like_button_nil"
         }
         cell.likeButton.setImage(likeButton, for: .normal)
     }

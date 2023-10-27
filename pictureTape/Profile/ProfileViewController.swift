@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 import WebKit
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
     
     private let profileService = ProfileService.shared
     private let sceneDelegate = SceneDelegate()
@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
     let avatarImage = UIImageView()
     let tabDoorButton = UIButton()
     
-
+    
     @objc func buttonTapped() {
         profilePresenter?.showAlertWithYesNoAction()
         print("Button tapped!")
@@ -61,11 +61,11 @@ class ProfileViewController: UIViewController {
         nNLabel.textColor = UIColor(named: "YP Gray")
         messageLabel.textColor = .white
         messageLabel.numberOfLines = 0
-       
-            nameLabel.font = UIFont.boldSystemFont(ofSize: 23)
+        
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 23)
         nNLabel.font = UIFont.systemFont(ofSize: 13)
-            messageLabel.font = UIFont.systemFont(ofSize: 13)
-     
+        messageLabel.font = UIFont.systemFont(ofSize: 13)
+        
         
         
         view.addSubview(avatarImage)

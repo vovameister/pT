@@ -23,7 +23,6 @@ final class OAuth2Service {
         }
         set {
             OAuth2TokenStorage().token = newValue
-            print("TOKEN", newValue)
         }
     }
     func fetchOAuthToken(
@@ -31,17 +30,20 @@ final class OAuth2Service {
         completion: @escaping (Result<String, Error>) -> Void
     )  {
         assert(Thread.isMainThread)
-        if task != nil {
-            if lastCode != code {
-                task?.cancel()
-            } else {
-                return
-            }
-        } else {
-            if lastCode == code {
-                return
-            }
-        }
+        
+        if task != nil { return }
+        if lastCode == code { return }
+//        if task != nil {
+//            if lastCode != code {
+//                task?.cancel()
+//            } else {
+//                return
+//            }
+//        } else {
+//            if lastCode == code {
+//                return
+//            }
+//        }
         lastCode = code
         let request = authTokenRequest(code: code)
         let session = URLSession.shared
@@ -64,9 +66,9 @@ final class OAuth2Service {
 private func authTokenRequest(code: String) -> URLRequest {
     URLRequest.makeHTTPRequest(
         path: "/oauth/token"
-        + "?client_id=\(AccessKey)"
-        + "&&client_secret=\(SecretKey)"
-        + "&&redirect_uri=\(RedirectURI)"
+        + "?client_id=\(Constants.accessKey)"
+        + "&&client_secret=\(Constants.secretKey)"
+        + "&&redirect_uri=\(Constants.redirectURI)"
         + "&&code=\(code)"
         + "&&grant_type=authorization_code",
         httpMethod: "POST",

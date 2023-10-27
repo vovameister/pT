@@ -10,7 +10,7 @@ protocol ProfileViewHealperProtocol {
     func updateAvatar()
     func updateProfile(profile: Profile)
 }
-class ProfileViewHelper: ProfileViewHealperProtocol {
+final class ProfileViewHelper: ProfileViewHealperProtocol {
     private let profileViewController: ProfileViewController?
 
     init(viewController: ProfileViewController) {

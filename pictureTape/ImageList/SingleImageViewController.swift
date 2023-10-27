@@ -46,7 +46,7 @@ final class SingleImageViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func shareButton(_ sender: Any) {
-        let share = UIActivityViewController(activityItems: [self.imageView.image], applicationActivities: nil)
+        let share = UIActivityViewController(activityItems: [self.imageView.image!], applicationActivities: nil)
         present(share, animated: true)
     }
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {

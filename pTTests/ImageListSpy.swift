@@ -7,7 +7,7 @@
 @testable import pictureTape
 import Foundation
 
-class ImageListHelperSpy: ImageListHelperProtocol {
+final class ImageListHelperSpy: ImageListHelperProtocol {
     var setIsLikedCalled = false
     var isLikedValue: Bool?
     var cellValue: ImageListCell?

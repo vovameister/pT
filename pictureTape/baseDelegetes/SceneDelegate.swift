@@ -22,7 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.rootViewController = splashViewController
         window?.makeKeyAndVisible()
-//window?.rootViewController = UIStoryboard(name: "Main", bundle: .main).instantiateInitialViewController()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

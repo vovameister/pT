@@ -11,7 +11,7 @@ import Foundation
 import XCTest 
  // Import your app's module
 
-class ImageListViewControllerTests: XCTestCase {
+final class ImageListViewControllerTests: XCTestCase {
     var imageListViewController: ImageListViewController!
     var imageListHelperSpy: ImageListHelperSpy!
 

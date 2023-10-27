@@ -13,28 +13,31 @@ final class ImageListViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     
+    var helper: ImageListHelperProtocol?
     
     private var ImageListServiceObserver: NSObjectProtocol?
     
     private var imageListService = ImagesListService()
-    /*private */var helper: ImageListHelperProtocol?
     private let showSingleImageSegueIdentifier = "ShowSingleImage"
     private var photos: [Photo] = []
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+        
         imageListService = ImagesListService()
         helper = ImageListHelper()
+        
         imageListService.fetchPhotosNextPage(completion: { result in
             switch result {
             case .success(let result):
                 self.photos = result
             case .failure(let error):
                 print("error \(error)")
+                return
             }
         })
-        ImageListServiceObserver = NotificationCenter.default.addObserver(forName: ImagesListService.DidChangeNotification, object: nil, queue: .main) {
+        ImageListServiceObserver = NotificationCenter.default.addObserver(forName: ImagesListService.didChangeNotification, object: nil, queue: .main) {
             [weak self] _ in
             guard let self = self else { return }
             self.updateTableViewAnimated()
@@ -113,19 +116,19 @@ extension ImageListViewController: UITableViewDataSource {
         configCell(for: imageListCell, with: indexPath)
         return imageListCell
     }
-    
-    
 }
 extension ImageListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row + 1 == photos.count
+        if indexPath.row + 1 == imageListService.photo.count,
+           let isUITest = ProcessInfo.processInfo.environment["isUITest"], isUITest != "true"
         {
             imageListService.fetchPhotosNextPage(completion: { result in
                 switch result {
                 case .success(let result):
-                    self.photos.append(contentsOf: result)
+                        self.photos.append(contentsOf: result)
                 case .failure(let error):
                     print("error \(error)")
+                    return
                 }
             })
         }
@@ -151,7 +154,7 @@ extension ImageListViewController: ImagesListCellDelegate {
         let photo = imageListService.photo[indexPath.row]
         self.imageListService.changeLike(photoId: photo.id, isLike: photo.isLiked) { [weak self] result in
             guard let self = self else { return }
-            
+    
             switch result {
             case .success:
                 DispatchQueue.main.async {

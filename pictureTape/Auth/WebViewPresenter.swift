@@ -16,6 +16,8 @@ public protocol WebViewPresenterProtocol {
 
 final class WebViewPresenter: WebViewPresenterProtocol {
     var authHelper: AuthHelperProtocol
+    
+    weak var view: WebViewViewControllerProtocol?
        
        init(authHelper: AuthHelperProtocol) {
            self.authHelper = authHelper
@@ -25,8 +27,7 @@ final class WebViewPresenter: WebViewPresenterProtocol {
            urlComponents.path == "/oauth/authorize/native",
            let items = urlComponents.queryItems,
            let codeItem = items.first(where: { $0.name == "code" })
-            
-        {    print("\(codeItem)")
+        {
             return codeItem.value
             
         } else {
@@ -49,6 +50,5 @@ final class WebViewPresenter: WebViewPresenterProtocol {
         view?.load(request: request)
         didUpdateProgress(0)
     }
-    weak var view: WebViewViewControllerProtocol?
 }
 

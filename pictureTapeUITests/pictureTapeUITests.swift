@@ -8,6 +8,7 @@
 import XCTest
 import WebKit
 import UIKit
+import pictureTape
 
 final class pictureTapeUITests: XCTestCase {
     private let app = XCUIApplication()
@@ -15,9 +16,13 @@ final class pictureTapeUITests: XCTestCase {
     override func setUpWithError() throws {
         continueAfterFailure = false
         
+        let isUITest = ProcessInfo.processInfo.environment["isUITest"]
+        if isUITest == "true" {
+            app.launchEnvironment = ["isUITest": "true"]
+        }
+        
         app.launch()
     }
-    
     func testAuth() throws {
         app.buttons["Authenticate"].tap()
         
@@ -28,13 +33,13 @@ final class pictureTapeUITests: XCTestCase {
         let loginTextField = webView.descendants(matching: .textField).element
         XCTAssertTrue(loginTextField.waitForExistence(timeout: 5))
         loginTextField.tap()
-        loginTextField.typeText("")
+        loginTextField.typeText("zonda4242@gmail.com")
         app.children(matching: .window).element(boundBy: 0).tap()
         
         let passwordTextField = webView.descendants(matching: .secureTextField).element
         XCTAssertTrue(passwordTextField.waitForExistence(timeout: 5))
         passwordTextField.tap()
-        passwordTextField.typeText("")
+        passwordTextField.typeText("kedby0-fupquz-Vegwur")
         sleep(2)
         app.children(matching: .window).element(boundBy: 0).tap()
         
@@ -49,21 +54,18 @@ final class pictureTapeUITests: XCTestCase {
         let tablesQuery = app.tables
         
         let cell = tablesQuery.children(matching: .cell).element(boundBy: 0)
-        cell.swipeUp()
+        cell.swipeUp(velocity: .slow)
         
         sleep(2)
         
         let cellToLike = tablesQuery.children(matching: .cell).element(boundBy: 1)
         
-        cellToLike.buttons["like_button_nil"].tap()
-        sleep(2)
+        cellToLike.buttons["likeButton"].tap()
+        sleep(5)
         cellToLike.buttons["like_button"].tap()
-        
-        sleep(2)
-        
+        sleep(4)
         cellToLike.tap()
         
-        sleep(2)
         
         let image = app.scrollViews.images.element(boundBy: 0)
         image.pinch(withScale: 3, velocity: 1)
@@ -76,11 +78,13 @@ final class pictureTapeUITests: XCTestCase {
         sleep(3)
         app.tabBars.buttons.element(boundBy: 1).tap()
         
-        XCTAssertTrue(app.staticTexts[""].exists)
-        XCTAssertTrue(app.staticTexts[""].exists)
+        XCTAssertTrue(app.staticTexts["Vladimir Klevtsov"].exists)
+        XCTAssertTrue(app.staticTexts["apathykid"].exists)
         
         app.buttons["logout button"].tap()
         
         app.alerts["Пока, пока!"].scrollViews.otherElements.buttons["Да"].tap()
     }
 }
+//        cellToLike.buttons["like_button"].tap()
+//cellToLike.buttons["like_button_nil"].tap()

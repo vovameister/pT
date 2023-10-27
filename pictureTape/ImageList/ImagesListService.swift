@@ -8,7 +8,7 @@
 import Foundation
 
 final class ImagesListService {
-    static let DidChangeNotification = Notification.Name(rawValue: "ImagesListServiceDidChange")
+    static let didChangeNotification = Notification.Name(rawValue: "ImagesListServiceDidChange")
     
     var photo: [Photo] = []
     
@@ -40,12 +40,12 @@ final class ImagesListService {
                 switch response {
                 case .success(let photoResults):
                     self.lastLoadedPage += 1
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async {     
                         for photoResult in photoResults {
                             self.photo.append(Photo(from: photoResult))
                         }
                         completion(.success(self.photo))
-                        NotificationCenter.default.post(name: ImagesListService.DidChangeNotification,
+                        NotificationCenter.default.post(name: ImagesListService.didChangeNotification,
                                                         object: self,
                                                         userInfo: ["URL": self.photo])
                     }
@@ -69,8 +69,6 @@ final class ImagesListService {
             return
         }
         request.setValue("Bearer \(authToken)", forHTTPHeaderField: "Authorization")
-        print(request)
-        print(request.httpMethod)
         let task = URLSession.shared.dataTask(with: request) {
             (data, response, error) in
             print("\(String(describing: response))")

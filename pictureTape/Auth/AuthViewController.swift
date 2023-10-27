@@ -8,7 +8,7 @@
 import UIKit
 import ProgressHUD
 
-class AuthViewController: UIViewController {
+final class AuthViewController: UIViewController {
     
     private let segIdentificator = "ShowWebView"
     private let tokenStorage = OAuth2TokenStorage()
@@ -49,6 +49,7 @@ extension AuthViewController: WebViewViewControllerDelegate {
             case .failure(let error):
                 UIBlock.dissmiss()
                 print("error \(error)")
+                return
             }
         })
     }
